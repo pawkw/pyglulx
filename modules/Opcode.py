@@ -5,6 +5,7 @@ class Opcode:
         self.name = name
         self.code = code
         self.IOs = IOs
+        self.args = []
 
     def __repr__(self) -> str:
         return f"{self.name} {self.code} {self.IOs}"

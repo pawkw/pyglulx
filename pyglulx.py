@@ -18,6 +18,6 @@ if __name__ == "__main__":
         
     memory = Mem(ROM)
 
-    memory.get_func()
+    memory.get_object()
     opcode = memory.get_opcode()
     print(opcode)
