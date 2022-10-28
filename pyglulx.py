@@ -1,6 +1,6 @@
-from pip import main
-from modules.Header import Header
+from modules.Mem import Mem
 import sys
+from modules.rawopcodes import opcodes
 
 if __name__ == "__main__":
     
@@ -16,9 +16,8 @@ if __name__ == "__main__":
     if not ROM:
         raise FileNotFoundError()
         
-    header = Header(ROM[0:36])
+    memory = Mem(ROM)
 
-    if header.get("magicNumber") != 1198290284:
-        raise ValueError("This is the wrong type of file.")
-    
-    print(header)
+    memory.get_func()
+    opcode = memory.get_opcode()
+    print(opcode)
