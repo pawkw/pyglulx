@@ -1,6 +1,8 @@
 from modules.Mem import Mem
+from modules.Stack import Stack
 import sys
 from modules.rawopcodes import opcodes
+from modules.run import run
 
 if __name__ == "__main__":
     
@@ -17,7 +19,7 @@ if __name__ == "__main__":
         raise FileNotFoundError()
         
     memory = Mem(ROM)
+    stack = Stack(memory.header.get('stackSize'))
 
-    memory.get_object()
-    opcode = memory.get_opcode()
-    print(opcode)
+    run(memory, stack)
+    
